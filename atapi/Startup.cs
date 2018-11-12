@@ -36,7 +36,7 @@ namespace atapi
                     Title = "ROR Online - v1 API Specification",
                     Description = "Describes the list of API's used for ROR Online project",
                     TermsOfService = "None",
-                    Contact = new Contact() { Name = "ROR Online API", Email = "rorvic@outlook.com", Url = "rorvic.azurewebsites.net" }
+                    Contact = new Contact() { Name = "ROR Online API", Email = "atapi@outlook.com", Url = "https://atapiap.azurewebsites.net" }
                 });
 
                 c.SwaggerDoc("v2", new Info
@@ -45,7 +45,7 @@ namespace atapi
                     Title = "ROR Online - v2 API Specification",
                     Description = "Describes the list of API's used for ROR Online project",
                     TermsOfService = "None",
-                    Contact = new Contact() { Name = "ROR Online API", Email = "rorvic@outlook.com", Url = "rorvic.azurewebsites.net" }
+                    Contact = new Contact() { Name = "ROR Online API", Email = "atapi@outlook.com", Url = "https://atapiap.azurewebsites.net" }
                 });
             });
 

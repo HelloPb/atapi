@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace atapi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [EnableCors("CORS_GLOBAL")]
     public class ValuesController : ControllerBase

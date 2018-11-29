@@ -19,6 +19,43 @@ namespace atapi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureAppConfiguration((context, config) =>
+            {
+                var builtConfig = config.Build();
+
+                if (context.HostingEnvironment.IsDevelopment())
+                {
+                    config.AddAzureKeyVault(
+                        $"https://atkey.vault.azure.net/keys/at",
+                        "9cea0a51-bf38-4900-a8db-ef04a4ad59ec",
+                        "p7aEUuH/zGssz5G/pYaa7Iiek/8AskkrpmCyIfuEIv4=");
+
+                }
+                else if (context.HostingEnvironment.IsStaging())
+                {
+                    config.AddAzureKeyVault(
+                        $"https://atkey.vault.azure.net/keys/at",
+                        "9cea0a51-bf38-4900-a8db-ef04a4ad59ec",
+                        "p7aEUuH/zGssz5G/pYaa7Iiek/8AskkrpmCyIfuEIv4=");
+
+                }
+                else if (context.HostingEnvironment.IsProduction())
+                {
+                    config.AddAzureKeyVault(
+                        $"https://atkey.vault.azure.net/keys/at",
+                        "9cea0a51-bf38-4900-a8db-ef04a4ad59ec",
+                        "p7aEUuH/zGssz5G/pYaa7Iiek/8AskkrpmCyIfuEIv4=");
+                }
+                else
+                {
+                    config.AddAzureKeyVault(
+                        $"https://atkey.vault.azure.net/keys/at",
+                        "9cea0a51-bf38-4900-a8db-ef04a4ad59ec",
+                        "p7aEUuH/zGssz5G/pYaa7Iiek/8AskkrpmCyIfuEIv4=");
+                }
+
+                builtConfig = config.Build();
+
+            }).UseStartup<Startup>();
     }
 }

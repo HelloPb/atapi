@@ -19,8 +19,6 @@ namespace atapi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((context, config) =>
-            {
-            }).UseStartup<Startup>();
+                .UseStartup<Startup>();
     }
 }
